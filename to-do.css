@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+.todo{ 
+    margin: 19vh auto;
+    padding: 30px 20px;
+    border: 2px solid black;
+    background: white;
+    width: 100%;
+    max-width: 540px;
+    border-radius: 10px;
+}
+.todo h2{
+    color: #4e085f;
+    margin: 2vh;
+    margin-left: 1vh;
+    font-size: 1.7rem;
+}
+.todo h2 img{
+    width: 30px;
+    margin-left: 3vh;
+}
+.line2{
+    /* margin: 2vh; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.textInput{
+    flex: 1;     /* so the input filed will take the full width*/
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+.btn{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+/* pseudo element - before */
+/* to bring the circle infront of the task list */
+ul li::before{
+    content: '';  /*content will be empty*/
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    background-size: cover;
+    background-image: url('https://icons.veryicon.com/png/o/miscellaneous/wens/uncheck.png');
+    background-position: center;
+    top: 10px;
+    left: 12px;
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    /* we have to update the img that circle one*/
+    background-image: url(checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background-color: #edeef0;
+}
